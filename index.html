@@ -1,118 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>To My Beloved</title>
+  <meta charset="UTF-8">
+  <title>Happy Girlfriend's Day ❤️</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      box-sizing: border-box;
     }
-
-    .container {
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
-      animation: fadeIn 3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    h1 {
-      text-align: center;
-      color: #ff69b4;
-      font-size: 3em;
-      animation: float 4s infinite ease-in-out;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 1.2em;
-      margin-top: 20px;
-      text-align: justify;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+    body, html {
       height: 100%;
-      pointer-events: none;
-      z-index: -1;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      background: #0f0c29;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     }
 
-    .hearts span {
+    /* Heart animation */
+    .heart {
+      width: 10px;
+      height: 10px;
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff69b4;
-      animation: floatHeart 6s linear infinite;
-      opacity: 0.6;
-      clip-path: polygon(50% 0%, 61% 13%, 75% 13%, 85% 25%, 85% 38%, 75% 50%, 50% 75%, 25% 50%, 15% 38%, 15% 25%, 25% 13%, 39% 13%);
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s infinite linear;
     }
 
-    @keyframes floatHeart {
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: red;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -5px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
       0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      50% {
+        transform: translateY(100vh) rotate(45deg);
         opacity: 1;
       }
       100% {
-        transform: translateY(-10vh) scale(1.5);
+        transform: translateY(-10vh) rotate(45deg);
         opacity: 0;
       }
+    }
+
+    .letter-container {
+      position: relative;
+      z-index: 10;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff8da1;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.7;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="hearts">
-    <!-- Floating hearts -->
-    <script>
-      for (let i = 0; i < 40; i++) {
-        const heart = document.createElement('span');
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
-        heart.style.animationDelay = Math.random() * 5 + 's';
-        document.querySelector('.hearts').appendChild(heart);
-      }
-    </script>
+
+  <!-- Animated hearts -->
+  <script>
+    const numberOfHearts = 60;
+    for (let i = 0; i < numberOfHearts; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Letter content -->
+  <div class="letter-container">
+    <h1>Happy Girlfriend's Day ❤️</h1>
+    <p>Hey my love,</p>
+    <p>
+      On this special day, I just want to remind you how much you mean to me. I love the way you smile at the smallest things, how your laughter lights up even my darkest days, and how your heart is the warmest place I’ve ever known.
+    </p>
+    <p>
+     
+    </p>
+    <p>
+      I promise to always support your dreams, be your biggest cheerleader, and love you Forever . No matter where life takes us, my heart will always find its way to you.
+    </p>
+    <p>
+      Forever yours,I love you my angel<br>
+      ❤️ [VANSH]
+    </p>
   </div>
 
-  <div class="container">
-    <h1>To You, My Love</h1>
-    <p>
-      From the moment I met you, something inside me changed.
-    </p>
-    <p>
-      hi ,hiya dhek me teko ab jo btane jaa rha hu shyd bohot kuch change ho jaye iske baad , YAAR HIYA I LIKE YOU ARE , me pichle 2 saal se karta hu butt kabhi bol nhi paya and you know me ne kitne baar tera phone number le ke msg karne ka socha but nhi ho paa rha tha mere se.. i waited 2 year for this day . HIYA meko bas apni dil ki baat batana tha and i think so tu mere se ab baat nhi karegi but pls hiya aisa mat karna , and you know samarth ye baat janta hai ussi ne meko force kiya ki bta de usko , and i thnik teko pta hi hoga ki i like you bcs me baatein hi aise karta hu tere sath bohot hints bhi diya hu , you know me ye chiz phele hi karna chata tha but ho nhi paa rha tha . Ab me bas ek chiz hi cahata hu ki HIYA pls mere se baat karna mat chhodna
-    </p>
-    <p style="text-align: right; margin-top: 30px;">
-      — VANSH 💖
-    </p>
-  </div>
 </body>
 </html>
